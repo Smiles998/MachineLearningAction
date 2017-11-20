@@ -1,0 +1,6 @@
+1.numpy：
+	cov()---》矩阵求协方差
+
+	linalg=linear+algebra：线性运算
+
+		：linalg.eig()求方阵的特征值和特征向量：

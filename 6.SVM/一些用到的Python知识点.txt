@@ -1,0 +1,82 @@
+1.Numpy：中关于矩阵的一些知识：
+	
+	。ndarray.T	返回矩阵的转置
+
+	。multiply(x1,x2)-->x1,x2两矩阵element-wise 相乘
+
+	。alpha[alpha>0]是数组过滤的一个实例，而且它只对numpy类型有用，并不适用于python中的正则表
+		
+		如果输入alpha>0,则会得到一个布尔数组，并且在不等式成立的情况下，其对应值为True
+
+2.Python中记录程序运行时间的三种方法：
+	
+   方法1：
+	import datetime
+	starttime = datetime.datetime.now()
+	#long running
+	endtime = datetime.datetime.now()
+	print (endtime - starttime).seconds
+   方法2：
+	start = time.time()
+	run_fun()
+	end = time.time()
+	print end-start
+   方法3：
+	start = time.clock()
+	run_fun()
+	end = time.clock()
+	print end-start
+
+  方法1,和方法2都包含了其他程序使用CPU的时间，是程序开始到程序结束的运行时间
+
+方法3只计算了程序运行的CPU时间
+
+3.Numpy中nonzero()的用法：
+
+	nonzeros(a)返回数组a中值不为零的元素的下标，它的返回值是一个长度为a.ndim(数组a的轴数)的元组，
+
+元组的每个元素都是一个整数数组，其值为非零元素的下标在对应轴上的值
+
+   通俗地讲：就是返回的元组个数=a.ndim(表示a的维数)，第一个元素表示非零元素的横坐标，第二个元素表示
+
+非零元素的列坐标
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	

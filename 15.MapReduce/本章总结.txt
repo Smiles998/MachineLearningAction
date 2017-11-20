@@ -1,0 +1,15 @@
+MapReduce小结：
+
+1.当运算需求超出了当前资源的运算能力，可以考虑购买更好的机器。
+
+另：
+    可将计算转成并行的作业，MapReduce提供了这种方案的一个具体实施框架：在MapReduce中，作业被
+分成map阶段和reduce阶段
+
+2.一个典型的作业流程：
+	。先使用map阶段并行处理数据
+	。再讲这些数据在reduce阶段合并
+
+mapper和reducer之间传输数据的形式是key/value对，一般地，map阶段后数据还会按照key值进行排序
+
+。Hadoop是一个流行的可运行的MapReduce作业的Java项目，它同时也提供非Java作业的运行支持，叫做Hadoop流

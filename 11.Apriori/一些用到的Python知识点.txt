@@ -1,0 +1,16 @@
+1.Python中的set和frozenset方法的区别：
+
+	set:无序排序且不重复，是可变的
+		。有add(),remove()等方法，既然是可变的，所以它不存在hash值
+		。基本功能包括关系测试和消除重复元素
+		。集合对象还支持union,intersection,difference，sysmmetric difference等数学运算
+		。支持x in set,len(set),for x in set等操作
+
+	frozenset:是冻结的集合，是不可变的，存在hash值，缺点是一旦创建便不能更改，没有add，remove方法
+	
+
+2.Python中的字典：
+
+	。字典的update()方法：
+
+	     dict.update(dict2):将字典dict2添加到指定字典中，该方法没有任何返回值

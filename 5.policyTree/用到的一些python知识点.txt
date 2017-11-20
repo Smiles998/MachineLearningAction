@@ -1,0 +1,164 @@
+1.math模块
+	math.log(x)--->对值取对数
+
+2.内存分配问题：
+	Python语言中不用考虑内存分配的问题。Python语言在函数中传递的是列表的引用，
+在函数内部对列表对象的修改，将会影响该列表的整个生存周期。
+    为了消除这个不良影响，我们需要在函数的开始声明一个新列表对象
+
+--》Python语言中所有的变量默认都是全局有效的，只要我们清楚知道当前代码的主要功能，就并不会引入太大的麻烦
+
+
+3.列表：---》与数组类似
+   。append()方法：
+	a=[1,2,3],b=[3,4,5]
+	a.append(b)---->a=[1,2,3,[3,4,5] ]
+
+   。extend()方法：
+	a=[1,2,3],b=[3,4,5]
+	a.extend(b)---->a=[ 1,2,3,3,4,5 ]
+注意：sorted()函数是对列表进行排序
+
+   。index()方法：得到指定元素的下标
+	eg:  a=[1,2,3]
+	     print(a.index(2))--->1
+
+
+4.字典：
+	x={'K':2,'B':1,'C':4,'A':2,'F':7,'D':8}
+1).x.items():将字典的key/value转换为（key,value）元组构成的列表
+	dict_items( [('K', 2), ('B', 1), ('C', 4), ('A', '2'), ('F', 7), ('D', 8)] )
+
+2)sorted( x.items(),key=operator.itemgetter(0),reverse=True    )
+说明如下：
+	。sorted()函数对第一个列表参数进行排序
+	。第二个参数是排序的键
+	。第三个参数是排序的顺序，降序(True)/升序(False)  
+
+3)type()
+	使用python提供的type()函数可以判断一个变量是否为字典类型：
+   eg:type(...)._name_ == 'dict'
+
+
+5.maplotlib图标中中文的解决问题：
+	from pylab import mpl
+	
+	mpl.rcParams['font.sans-serif'] = ['FangSong']#指定默认字体，--->此处可以有很多的选择
+	mpl.rcParams['axes.unicode_minus'] = False #解决保存图像时，负号‘-’显示为方块的问题
+
+6.maplotlib.pyplot：
+	subplot()---》功能与MATLAB中类似
+	subplot(nrows,ncols,plotnumber)--->eg:subplot(211)将figure切分为2行1列，并取第一部分---》得到的是一个图形的句柄
+
+
+7.函数属性---》将函数也视为一个对象，任何一个对象都可以存在属性
+
+	Python通过函数属性实现全局变量：
+eg:
+	def add(x=1):
+		try:
+			add.sum += x
+		except AttibuteError:
+			add.sum = x
+		return x
+
+	print(add(3))--->3
+	print(add(4))--->7
+	print(add(10))-->17
+
+functionname.attribute的形式是在定义函数的属性，且该属性必须初始化，否则不能进行其他操作
+向函数添加属性，有以下几种方法：
+	。通过func_dict(也可以写成__dict__)来添加，如：
+		def fun1():
+			print("Hello")
+		fun1.__dict__['b']=1
+
+	-->通过__dict__来获取函数属性：
+		print(fun1.__dict__)
+	
+
+
+	。直接在函数内部添加，在其他函数内部来初始化或者在函数本身里面初始化；也可以在函数内部定义操作，而在函数外部初始化：
+		eg:  def func():
+			print('love u')
+		     
+		     fun.a=3
+		     if fun.a:
+			fun()
+
+		eg2:	def testnew():
+				testnew.x +=1
+				return testnew.x
+
+			testnew.x=3
+			print(testnew())--->4
+		
+	
+8.pickle:
+     使用pickle的唯一要求是：必须以二进制访问模式打开这些文件	
+
+	python提供了一个标准库pickle，它可以保存和加载几乎任何Python数据对象			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

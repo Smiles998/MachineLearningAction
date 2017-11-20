@@ -1,0 +1,24 @@
+1.Python函数式编程--->map()
+	Python中map(),filter(),reduce()这三个都是应用于序列的内置函数
+	
+    map(func,seq1[,seq2,...]):
+
+	第一个参数接受一个函数名，后面的参数接受一个或多个可迭代的序列，返回的是一个集合
+
+map()函数是将func作用于seq中的每一个元素并将所有的调用的结果作为一个list返回
+	
+	eg:
+		curLine=line.strip().split('\t')
+		fltLine=list(map(float,curLine))
+		注意：将数值型转换为浮点数，记住外层的list必须要加上的
+			
+
+
+
+2.Numpy：
+	
+	。numpy.ndarray.tolist():
+		Return a copy of the array data as a (nested) Python list
+	eg:
+		 a=array([[1,2,3],[5,4,2],[5,7,6]  ])
+		 a.tolist()=[[1, 2, 3], [5, 4, 2], [5, 7, 6]]

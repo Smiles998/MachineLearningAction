@@ -1,0 +1,83 @@
+1.Numpy：
+	
+	numpy.mat(data)--->将输入data解释为一个矩阵形式
+	
+	array.transpose()
+		:returns a view of the array with axes transposed(颠倒)---》相当于转置
+
+2.Python中的range()函数：
+	 range()函数
+
+    函数说明： range(start, stop[, step]) -> range object，根据start与stop指定的范围以及step设定的步长，生成一个序列。
+    参数含义：start:计数从start开始。默认是从0开始。例如range（5）等价于range（0， 5）;
+              end:技术到end结束，但不包括end.例如：range（0， 5） 是[0, 1, 2, 3, 4]没有5
+              scan：每次跳跃的间距，默认为1。例如：range（0， 5） 等价于 range(0, 5, 1)
+    函数返回的是一个range object
+
+。numpy中的arange函数：与range函数类似，但是其返回的是一个array
+
+3.Numpy中的数组和矩阵：
+
+	。数组运算是按元素逐个运算的
+
+	。矩阵运算是按照线性代数中的矩阵运算进行计算的，如果想要使用矩阵运算，
+   则必须将数组转换为矩阵
+
+	。一般如果数组运算能够满足要求，则不需要将其转换为矩阵
+
+	。总之，数组和矩阵是可以进行相互转换的，根据你需要进行的计算来进行数据表示的选择
+
+   在Python程序中，自己会优先选择数组，在需要进行矩阵运算时，会将其转换为矩阵
+
+ 。数组：
+	为数组中增加一行/一列：
+	 1) arrA = row_strack( (arrA,row) )-->为arrA数组增加一行元素row
+	 2）arrA = column_stack( (arrA,col))--->为arrA数组增加一列元素col
+
+4.with同时打开多个文件：
+	eg1: 
+		with open('file1') as f1, open('file2') as f2, open('file3') as f3:
+   			 for i in f1:
+      				j = f2.readline()
+      				k = f3.readline()
+        			print(i,j,k)
+
+	eg2:
+      		from contextlib import nested
+	
+		with nested(open('file1'), open('file2'), open('file3')) as (f1,f2,f3):
+ 			 for i in f1:
+      				j = f2.readline()
+        			k = f3.readline()
+        			print(i,j,k)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
